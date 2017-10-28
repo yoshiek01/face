@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 #  devise_for :users
-  resources :blogs,only: [:index, :new, :create, :edit, :update, :destroy]do
-    collection do
-      post :confirm
-    end
+  resources :blogs do
+      resources :comments
+      post :confirm, on: :collection
   end
 
   devise_for :users, controllers:{

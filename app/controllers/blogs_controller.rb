@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
  def index
      @blogs = Blog.all
@@ -12,6 +12,12 @@ class BlogsController < ApplicationController
   else
    @blog = Blog.new
   end
+ end
+
+ # showアクションを定義します。入力フォームと一覧を表示するためインスタンスを2つ生成します。
+ def show
+   @comment = @blog.comments.build
+   @comments = @blog.comments
  end
 
  def create
@@ -60,7 +66,7 @@ class BlogsController < ApplicationController
    end
 
     # idをキーとして値を取得するメソッド
-  # def set_blog
-   # @blog = Blog.find (params [:id] )
- #end
+   def set_blog
+    @blog = Blog.find(params[:id])
+   end
 end

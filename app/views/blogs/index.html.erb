@@ -9,13 +9,14 @@
 
       <% @blogs.each do |blog| %>
        <div class="row">
-        <h3><%= blog.user.name %></h3>
-        <h4><%= profile_img(blog.user) %></h4>
+       <!-- ブログのタイトルにlink_toでリンクを設定します。 -->
+       <%= link_to blog_path(blog) do %>
+        <h2><strong><%= blog.title %></strong></h2>
+       <% end %>
 
-        <h5><strong><%= blog.title %></strong></h5>
-        <!-- strongは太字 -->
-
-        <p><%= blog.content %></p>
+       <h3><%= blog.user.name %></h3>
+       <h4><%= profile_img(blog.user) %></h4>
+       <p><%= blog.content %></p>
 
         <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
         <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>

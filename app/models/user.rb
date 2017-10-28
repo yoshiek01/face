@@ -4,8 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
   mount_uploader :avatar, AvatarUploader #deviseの設定配下に追記
-  has_many :blogs
+  has_many :blogs, dependent: :destroy
   #userが複数のblogをもつ
+  #CommentモデルのAssociationを設定
+
+  has_many :comments, dependent: :destroy
 
   def self.create_unique_string
     SecureRandom.uuid
