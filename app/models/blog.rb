@@ -3,4 +3,6 @@ class Blog < ActiveRecord::Base
     belongs_to :user
     # CommentモデルのAssociationを設定
     has_many :comments, dependent: :destroy
+    #dependent::destroyを設定することで
+    #Blogモデルが削除された時に紐づくコメントのレコードも削除される
 end
