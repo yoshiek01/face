@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   resources :poems, only: [:index, :show]do
   end
 
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]do
+  end
 
   resources :relationships, only: [:create, :destroy]
 

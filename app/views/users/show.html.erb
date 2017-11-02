@@ -1,0 +1,25 @@
+<div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+
+  <div class="blog-text">
+    <p class="left"> <strong>メールアドレス</strong></p>
+    <p class="left"> <%= @user.email%></p>
+    <p class="left"> <strong>ユーザ名</strong></p>
+    <p class="left"> <%= @user.name %></p>
+    <p class="left"> <%= profile_img(@user) %></p>
+  </div>
+
+<h3><strong>フォローしているユーザ</strong></h3>
+    <% @user.followed_users.each do |user| %>
+        <%= profile_img(user) %><br>
+        <%= user.name %><br>
+    <% end %>
+
+<h3><strong>フォローされているユーザ</strong></h3>
+      <% @user.followers.each do |user| %>
+          <class= 'profile_img'><%= profile_img(user) %></class>
+          <%= user.name %>
+      <% end %>
+<br>
+
+<%= link_to 'ユーザ一覧へ戻る', users_path %>
+</div>
