@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
 
     if @messages.last
       if @messages.last.user_id != current_user.id
-        @messages.last.read = true
+         @messages.last.read = true
       end
     end
     #メッセージが最新のもので、ユーザIDが自分でなければ、そのメッセージを既読にする
@@ -47,4 +47,5 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:body, :user_id)
   end
 
+end
 end
