@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
   has_many :followed_users, through: :relationships, source: :followed
   has_many :followers, through: :reverse_relationships, source: :follower
 
-
   def self.create_unique_string
     SecureRandom.uuid
   end
