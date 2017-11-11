@@ -39,13 +39,12 @@ class MessagesController < ApplicationController
     else
      render 'new'
     end
-
   end
+end
 
   private
   def message_params
     params.require(:message).permit(:body, :user_id)
   end
 
- end
 end
