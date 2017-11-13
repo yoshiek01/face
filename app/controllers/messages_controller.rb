@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   before_action do
     @conversation = Conversation.find(params[:conversation_id])
     #どの会話かを特定
+  end
 
   def index
     @messages = @conversation.messages
@@ -32,15 +33,12 @@ class MessagesController < ApplicationController
   def create
     @message = @conversation.messages.build(message_params)
     if @message.save
-      redirect_to blogs_path ,notice: "ブログを作成しました！"
-
-      redirect_to conversation_messages_path(@conversation), notice: "メッセージを送信しました！"
+      redirect_to conversation_messages_path(@conversation)
 
     else
      render 'new'
     end
   end
-end
 
   private
   def message_params
