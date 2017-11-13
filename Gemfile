@@ -74,3 +74,6 @@ gem 'omniauth-facebook'
 #SNSのプロフ画像を表示するためのuploader
 gem 'carrierwave'
 gem 'mini_magick'
+
+#プッシュ通知
+gem 'pusher'
