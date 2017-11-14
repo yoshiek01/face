@@ -14,14 +14,6 @@ class CommentsController < ApplicationController
         format.js { render :index }
 
         unless @comment.blog.user_id == current_user.id
-        #自分が自分のブログにコメントを投稿した際は、通知がこないようにする
-          Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'comment_created', {
-            #blogを作成したuserへのchannelを作成
-          message: 'あなたの作成したブログにコメントが付きました'
-          })
-        end
-
-        unless @comment.blog.user_id == current_user.id
           Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'comment_created', {
             message: 'あなたの作成したブログにコメントが付きました'
           })
