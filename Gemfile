@@ -77,3 +77,5 @@ gem 'mini_magick'
 
 #プッシュ通知
 gem 'pusher'
+
+gem 'fog'
