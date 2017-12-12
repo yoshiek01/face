@@ -21,7 +21,7 @@
         </div>
       <% end %>
 
-      <% if false%>
+      <% if @user.provider.blank? %>
         <div class="field">
           <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
           <%= f.password_field :password, autocomplete: "off" %>
@@ -50,7 +50,7 @@
           <%= f.hidden_field :avatar_cache %>
       </div>
 
-      <% if false%>
+      <% if @user.provider.blank? %>
         <div class="field">
           <%= f.label :確認のため現在のパスワードを入力してください %><br />
           <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
