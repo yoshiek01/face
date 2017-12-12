@@ -7,9 +7,11 @@
       <!-- ユーザ一覧に自分以外のユーザが表示され、メッセージを送付するリンクが表示される -->
           <li>
             <div class="item">
-              <div class="profile">
-                <%= profile_img(user) %>
-              </div>
+              <ul class = "profile">
+                <li><a> <%= profile_img(user) %> </a></li>
+              </ul>
+
+              <h2><br/><br/><br/><br/><br/><br/></h2>
               <h5>ユーザ名： <%= link_to user.name, user %> </h5>
               <h5>メールアドレス：  <%= user.email %></h5>
               <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>

@@ -2,7 +2,26 @@ li{
   list-style: none;
 }
 
-.profile{
-  width: 75px;
-  height: 75px;
+.profile li{
+  float: left;
+   width: 180px;
+   height: 180px;
+   position: relative;
+   overflow: hidden;
+}
+
+.profile li a {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1000%;
+    height: 2000px;
+    line-height: 2000px;
+    margin:-1000px 0 0 -500%;
+    text-align: center;
+}
+.profile li a img{
+    min-height: 200px;
+    min-width: 10%;
+    vertical-align: middle;
 }
