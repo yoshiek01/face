@@ -32,6 +32,19 @@ class User < ActiveRecord::Base
     end
   end
 
+  #SNSでログインしたときはパスワードを変更できないようにする
+  def update_without_current_password(params,*options)
+    params.delete(:current_password)
+
+    if params[:password].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation) if params[:password_confirmation].blank?
+    end
+
+    clean_up_passwords
+    update_attributes(params, *options)
+  end
+
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
    user = User.find_by(provider: auth.provider, uid: auth.uid)
 

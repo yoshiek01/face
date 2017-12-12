@@ -21,21 +21,23 @@
         </div>
       <% end %>
 
-      <div class="field">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-        <% if @minimum_password_length %>
-          <br />
-          <em>
-            <%= @minimum_password_length %> characters minimum
-          </em>
-        <% end %>
-      </div>
+      <% if false%>
+        <div class="field">
+          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+          <% if @minimum_password_length %>
+            <br />
+            <em>
+              <%= @minimum_password_length %> characters minimum
+            </em>
+          <% end %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+      <% end %>
 
   <!--    <div class="field">
         <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
@@ -48,11 +50,12 @@
           <%= f.hidden_field :avatar_cache %>
       </div>
 
-      <div class="field">
-        <%= f.label :確認のため現在のパスワードを入力してください %><br />
-        <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-      </div>
-
+      <% if false%>
+        <div class="field">
+          <%= f.label :確認のため現在のパスワードを入力してください %><br />
+          <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+        </div>
+      <% end %>
 
       <% if @user.provider.blank? %>
 
