@@ -45,9 +45,11 @@
       </div> -->
 
       <div class="field">
-        <%= profile_img(@user) if profile_img(@user) %>
-          <%= f.file_field :avatar %>
-          <%= f.hidden_field :avatar_cache %>
+        <div class = "imagefit">
+          <%= profile_img(@user) if profile_img(@user) %>
+            <%= f.file_field :avatar %>
+            <%= f.hidden_field :avatar_cache %>
+        </div>
       </div>
 
       <% if @user.provider.blank? %>
