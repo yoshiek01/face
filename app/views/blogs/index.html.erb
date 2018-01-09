@@ -2,9 +2,11 @@
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
   <!-- 中央寄せにするため、wrapperでブログ画面をかこむ -->
 
+    <div class = "main-column">
+
     <p><%= notice %></p>
     <h1>ブログ一覧</h1>
-      <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %>
+      <%= link_to "いまなにしてる？", new_blog_path, class: 'btn btn-default' %>
       <!-- btnはボタン-->
 
       <% @blogs.each do |blog| %>
@@ -18,9 +20,15 @@
        <h4><%= profile_img(blog.user) %></h4>
        <p><%= blog.content %></p>
 
-        <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
-        <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
        </div>
       <% end %>
+    </div>
+    
+    <div class="side-column">
+    
+      <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
+      <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+    </div>
+    
   </div>
 </div>
