@@ -26,6 +26,14 @@ set :rbenv_type, :system
 #出力するログのレベル。
 set :log_level, :debug
 
+server "13.230.220.143",
+       :user => "deployer",
+       :roles => %w(web app),
+       :ssh_options => {
+         :keepalive => true,
+         :keepalive_interval => 60 #seconds
+       }
+       
 namespace :deploy do
   desc 'Restart application'
   task :restart do

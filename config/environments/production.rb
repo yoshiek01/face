@@ -92,4 +92,5 @@ Rails.application.configure do
 end
 
 #ssh -i face-key3.pem ec2-user@13.230.220.143
-#ssh -i  "/home/ubuntu/.ssh/id_rsa" app@13.230.220.143
+#ssh -i "/home/ubuntu/.ssh/id_rsa" app@13.230.220.143
+
