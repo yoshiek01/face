@@ -1,18 +1,14 @@
-@media (min-width: 850px) {
+.content{
+  width: 480px;
+  margin: 0 auto;
+}
 
-   /* ↓レイアウト全体領域 */
-   .container {
-      display: table;
-      width: 100%;
-   }
-   /* ▼メインカラムの装飾 */
-   .main-column {
-      display: table-cell;
-   }
-   /* ▽サイドカラムの装飾 */
-   .side-column {
-      display: table-cell;
-      width: 30%;
-   }
-
+#main{
+  width: 300px;
+  float: right;
+}
+#side{
+  width: 180px;
+  float: left;
+  margin: 0 auto;
 }

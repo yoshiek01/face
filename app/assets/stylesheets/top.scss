@@ -36,7 +36,7 @@ header {
 }
 .navbar-default {
   .navbar-brand {
-    color: #08298A;
+    color: #E6E6E6;
     &:hover {
       color: white;
     }
@@ -72,21 +72,6 @@ header {
   }
 }
 
-.main-header {
-  padding-bottom: 15%;
-  width: 100%;
-  background-size: cover;
-  background-image: image-url("header.jpg");
-  //image-urlでassts/imagesまでのパスを自動生成
-  background-attachment: fixed;
-}
-
-.main-header img {
-  display: block;
-  margin: 0 auto;
-  width: 25%;
-  padding-top: 15%;
-}
 
 .about {
   background-color: white;
