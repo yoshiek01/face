@@ -1,7 +1,7 @@
 <div class = "content">
  <main id = "main">
     <p><%= notice %></p>
-    <h1>index</h1>
+    <h1>みんなの投稿</h1>
       <%= link_to "いまなにしてる？", new_blog_path, class: 'btn btn-default' %>
       <!-- btnはボタン-->
 
@@ -9,12 +9,12 @@
        <div class="row">
            <!-- ブログのタイトルにlink_toでリンクを設定します。 -->
            <%= link_to blog_path(blog) do %>
-            <h2><strong><%= blog.title %></strong></h2>
+            <h2><strong><%= "タイトル："%><%= blog.title %></strong></h2>
            <% end %>
 
-           <h3><%= blog.user.name %></h3>
+           <h4><%= "投稿者：" %><%= blog.user.name %><br></h4>
            <h4><%= profile_img(blog.user) %></h4>
-           <p><%= blog.content %></p>
+           <p><%= "内容："%><%= blog.content %></p>
 
            <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
            <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
