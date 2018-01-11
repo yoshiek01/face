@@ -1,4 +1,4 @@
-<div class = "contents">
+<div class = "index-content">
  <main id = "main">
     <p><%= notice %></p>
     <h1>みんなの投稿</h1>
@@ -6,7 +6,7 @@
       <!-- btnはボタン-->
 
       <% @blogs.each do |blog| %>
-       <div class="row">
+       <div class="index-row">
            <!-- ブログのタイトルにlink_toでリンクを設定します。 -->
            <%= link_to blog_path(blog) do %>
             <h2><strong><%= "タイトル："%><%= blog.title %></strong></h2>
@@ -23,12 +23,12 @@
        </div>
 
  </main>
-    
- <div id = "side">
+ 
+ <aside class = "side">
     <h3>サイドメニュー</h3>
     <li><%= link_to "お問い合わせ", new_contact_path %></li>
     <li><%= link_to '友達一覧', users_path if user_signed_in? %></li>
     <li><%= link_to "メッセージ", conversations_path %></li>
     <li><%= link_to "一覧画面にもどる", blogs_path %></li>
- </div>
+ </aside>
 </div>
