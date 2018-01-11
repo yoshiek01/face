@@ -1,0 +1,20 @@
+rails s -b $IP -p $PORT
+
+sudo service postgresql start
+
+bundle exec cap production deploy
+
+cap production unicorn:stop
+cap production unicorn:start
+
+sudo nginx -s stop
+sudo nginx
+
+・nginx アクセスログ
+/var/log/nginx/achieve_access.log;
+
+・nginx エラーログ
+/var/log/nginx/achieve_error.log;
+
+・Unicornログ
+/var/www/achieve/shared/log/unicorn.log;

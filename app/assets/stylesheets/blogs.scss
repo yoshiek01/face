@@ -1,15 +1,26 @@
-.content{
+body{
+  overflow: hidden;
+}
+
+.contents{
   width: 1280px;
   margin: 0 auto;
+  box-sizing: border-box;
+  padding-bottom: 32768px;
+  margin-bottom: -32768px;
 }
 
 #main{
-  width: 1000px;
+  width: 1050px;
   float: right;
   margin: 0 auto;
 }
+
 #side{
   width: 180px;
   float: left;
-//  margin: 0 auto;
+  background-color: #AEAEAE;
+  box-sizing: border-box;
+  padding-bottom: 32768px;
+  margin-bottom: -32768px;
 }
