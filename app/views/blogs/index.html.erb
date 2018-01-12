@@ -1,34 +1,48 @@
-<div class = "index-content">
- <main id = "main">
+  <div class="container">
+    
+ <!-- <div class="wrapper clearfix">で<aside class="side_menu">を囲むことで、side_menuの分、footerを下にずらします。 -->
+    <div class="wrapper clearfix">
+
+       <aside class="side_menu">
+        <div class = "parent">
+        <nav>
+         <ul>
+          <li><%=link_to "タイムライン", blogs_path %></li>
+          <li><%=link_to "お問い合わせ", new_contact_path %></li>
+          <li><%=link_to "友達一覧", users_path if user_signed_in? %></li>
+          <li><%= link_to "メッセージ", conversations_path %></li>
+         </ul>
+       </nav>
+      </div>
+ 
+     </aside>
+  <article class="content">
+  
+   <div class="tweet">
+    <div class="wrapper col-md-8 col-sm-10">
+  <!-- 中央寄せにするため、wrapperでブログ画面をかこむ -->
+
     <p><%= notice %></p>
-    <h1>みんなの投稿</h1>
+    <h1>ツイート一覧</h1>
       <%= link_to "いまなにしてる？", new_blog_path, class: 'btn btn-default' %>
       <!-- btnはボタン-->
-
+      
       <% @blogs.each do |blog| %>
-       <div class="index-row">
-           <!-- ブログのタイトルにlink_toでリンクを設定します。 -->
-           <%= link_to blog_path(blog) do %>
-            <h2><strong><%= "タイトル："%><%= blog.title %></strong></h2>
-           <% end %>
-
-           <p><%= "投稿者：" %><%= blog.user.name %><br></p>
-           <h3><%= profile_img(blog.user) %></h3>
-           <p><%= "内容："%><%= blog.content %></p>
-
-           <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
-           <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
-        <% end %>
-
-       </div>
-
- </main>
- 
- <aside class = "side">
-    <h3>サイドメニュー</h3>
-    <li><%= link_to "お問い合わせ", new_contact_path %></li>
-    <li><%= link_to '友達一覧', users_path if user_signed_in? %></li>
-    <li><%= link_to "メッセージ", conversations_path %></li>
-    <li><%= link_to "一覧画面にもどる", blogs_path %></li>
- </aside>
+       <div class= "row">
+        <h4><strong><%= "タイトル："+ blog.title %></strong></h4>
+        <!-- strongは太字 -->
+        
+        <p><%= "投稿者" + blog.user.name %><br></p>
+        <h3><%= profile_img(blog.user) %></h3>
+        <p><%= "内容：" + blog.content %></p>
+        <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
+        <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+        </div>
+      <% end %>
+  </div>
 </div>
+
+
+ 
+  </article>
+ </div>
