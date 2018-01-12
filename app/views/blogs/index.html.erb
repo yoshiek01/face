@@ -23,7 +23,7 @@
   <!-- 中央寄せにするため、wrapperでブログ画面をかこむ -->
 
     <p><%= notice %></p>
-    <h1>ツイート一覧</h1>
+    <h1>タイムライン</h1>
       <%= link_to "いまなにしてる？", new_blog_path, class: 'btn btn-default' %>
       <!-- btnはボタン-->
       
@@ -32,17 +32,15 @@
         <h4><strong><%= "タイトル："+ blog.title %></strong></h4>
         <!-- strongは太字 -->
         
-        <p><%= "投稿者" + blog.user.name %><br></p>
+        <p><%= "投稿者：" + blog.user.name %><br></p>
         <h3><%= profile_img(blog.user) %></h3>
         <p><%= "内容：" + blog.content %></p>
         <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
         <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
         </div>
       <% end %>
-  </div>
-</div>
+     </div>
+    </div>
 
-
- 
   </article>
  </div>
