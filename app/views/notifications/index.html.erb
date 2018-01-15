@@ -14,7 +14,7 @@
 
           <h4>
             <%= notification.comment.user.try(:name) %>さんが
-            あなたのブログ（<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>）にコメントしました。
+            あなたの投稿（<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>）にコメントしました。
           </h4>
           <p><%= posted_time(notification.created_at) %></p>
         </li>
