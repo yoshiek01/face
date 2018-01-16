@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     # Blogをパラメータの値から探し出し,Blogに紐づくcommentsとしてbuildします。
     @comment = current_user.comments.build(comment_params)
     @blog = @comment.blog
-    #commentにひもづいたnotificationを生成
+    # commentにひもづいたnotificationを生成
     @notification = @comment.notifications.build(user_id: @blog.user.id)
 
     # クライアント要求に応じてフォーマットを変更
@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
 
         unless @comment.blog.user_id == current_user.id
           Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'comment_created', {
-            message: 'あなたの作成したブログにコメントが付きました'
+            message: 'あなたの投稿にコメントが付きました'
           })
         end
         Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'notification_created', {
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
       end
     end
   end
-
+ 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
@@ -41,10 +41,27 @@ class CommentsController < ApplicationController
       end
     end
   end
+  
+  def edit
+   @comment = Comment.find(params[:id])
+  end
+  
+  def update
+   respond_to do |format|
+    @comment = Comment.find(params[:id])
+
+    if @comment.update(comments_params)
+     format.html { redirect_to blog_path(@blog.id), notice: 'コメントを更新しました。' }
+     format.js{ render :index }
+    else
+     redirect_to blog_path(@blog.id) , notice:"コメントを編集してください!"
+    end
+   end
+  end
 
   private
     # ストロングパラメーター
     def comment_params
       params.require(:comment).permit(:blog_id, :content)
     end
-end
+  end
