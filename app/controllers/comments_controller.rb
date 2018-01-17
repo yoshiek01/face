@@ -47,15 +47,13 @@ class CommentsController < ApplicationController
   end
   
   def update
-   respond_to do |format|
-    @comment = Comment.find(params[:id])
+   @comment = Comment.find(params[:id])
+   @blog = @comment.blog
 
-    if @comment.update(comments_params)
-     format.html { redirect_to blog_path(@blog.id), notice: 'コメントを更新しました。' }
-     format.js{ render :index }
-    else
-     redirect_to blog_path(@blog.id) , notice:"コメントを編集してください!"
-    end
+   if @comment.update(comment_params)
+    redirect_to blog_path(id: @blog.id), notice: 'コメントを更新しました。' 
+   else
+    redirect_to blog_path(@blog.id) , notice:"コメントを編集してください!"
    end
   end
 

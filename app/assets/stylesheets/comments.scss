@@ -10,6 +10,8 @@ ul{
   padding-top: 13px;
   border-bottom: 1px dotted #ccc;
   list-style-type: none;
+  height: 100%;
+  position: relative;
 }
 
 .right {
@@ -18,4 +20,8 @@ text-align: right;
 
 .left {
 text-align: left;
+}
+
+#comments_area {
+  height: 100%;
 }
