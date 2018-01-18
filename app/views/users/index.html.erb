@@ -1,7 +1,6 @@
-<div class="container">
   <h2>ユーザー</h2>
   <% @users.each do |user| %>
-      <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
+      <div class="container-child col-md-6 col-sm-12 ">
 
         <% if user.id != current_user.id %>
       <!-- ユーザ一覧に自分以外のユーザが表示され、メッセージを送付するリンクが表示される -->
@@ -22,5 +21,3 @@
 
       </div>
   <% end %>
-
-</div>

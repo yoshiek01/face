@@ -1,9 +1,4 @@
-<div class="container">
-    
-  <article class="content">
-  
-   <div class="tweet">
-    <div class="wrapper col-md-8 col-sm-10">
+ <div class="wrapper col-md-8 col-sm-10">
   <!-- 中央寄せにするため、wrapperでブログ画面をかこむ -->
 
     <p><%= notice %></p>
@@ -25,9 +20,4 @@
         <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
         </div>
       <% end %>
-     </div>
-    </div>
-
-  </article>
  </div>
-</div>

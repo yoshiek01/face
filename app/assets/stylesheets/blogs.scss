@@ -9,13 +9,6 @@ body{
   height: 100%;
 }
 
-.container{
-  float: right;
-  margin: 0 auto;
-  position: relative;
-  min-height: 100%;
-}
-
 ul{
   margin: 0;
   padding: 0;
@@ -25,21 +18,15 @@ li{
   list-style: none;
 }
 
+
 .side_menu{
-  width: 300px;
+//  width: 300px;
   float: left;
 }
 
 .wrapper{
   margin-top: 10px;
   padding-bottom: 100px;
-}
-
-.content{
-  width: 600px;
-  margin-left: 20px;
-  float: right;
-  font-size: 1.5rem;
 }
 
 .menu{

@@ -7,7 +7,7 @@
   .row {
     border-bottom: 1px solid #ccc;
     padding: 20px;
-    text-align: left;
+  //  text-align: left;
     word-wrap: break-word;
   }
 }
@@ -16,10 +16,7 @@ input[type="submit"].btn-block{
   margin: 15px 0;
 }
 
-.container{
-  padding-bottom: 85px;
-  width: 75%;
-}
+
 
 header {
   width: 100%;
@@ -127,6 +124,8 @@ body {
   background-color: #E6E6E6;
 }
 
+
+
 .parent a:hover img{
   background-color: #000;
   opacity: 0.5;
@@ -168,14 +167,29 @@ body {
   color: #4D4D4D;
 }
 
+.container{
+  width: 100%;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 85px;
+  margin: 0px 0px 0px 0px; 
+}
+
+.content{
+  width: 55%;
+  float: right;
+  font-size: 1.5rem;
+  margin: auto;
+}
+
 #footer {
   width: 100%;
+  position: absolute;
+  bottom: 0;
   background-color: #08298A;
   padding: 20px 0 10px 0;
   color: white;
   font-size: 12px;
-  position: absolute;
-  bottom: 0;
 }
 
 .flash {

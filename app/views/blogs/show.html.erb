@@ -1,20 +1,17 @@
-<div class="container">
-  
-    <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
+  <div class="wrapper col-md-8 col-sm-10">
 
-      <div class="wrapper col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
-
-        <div class="blog-text">
-          <p class="left"><strong>タイトル</strong></p>
-          <p class="left"><%= @blog.title %></p>
-          <p class="left"><strong>内容</strong></p>
-          <p class="left"><%= @blog.content %></p>
-          
-          <p class="right">
-            <strong>作成時間:</strong>
-            <%= @blog.created_at.strftime("%y/%m/%d %p %l:%M") %>
-          </p>
-        </div>
+    <div class="blog-text">
+      <p class="left"><strong>タイトル</strong></p>
+      <p class="left"><%= @blog.title %></p>
+      <p class="left"><strong>内容</strong></p>
+      <p class="left"><%= @blog.content %></p>
+        
+      <p class="right">
+        <strong>作成時間:</strong>
+        <%= @blog.created_at.strftime("%y/%m/%d %p %l:%M") %>
+      </p>
+    </div>
 
         <p>コメント一覧</p>
 
@@ -28,4 +25,3 @@
         <% end %>
         <%= link_to '戻る', blogs_path , class: 'btn btn-default btn-sm btn btn-info'%>
       </div>
-</div>
