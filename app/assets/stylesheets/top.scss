@@ -18,6 +18,7 @@ input[type="submit"].btn-block{
 
 .container{
   padding-bottom: 85px;
+  width: 75%;
 }
 
 header {
@@ -116,22 +117,62 @@ header {
 
 html {
   position: relative;
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
+  height: 100%;
   text-align: center;
   width: 100%;
   background-color: #E6E6E6;
-  overflow: auto;
 }
 
-footer {
+.parent a:hover img{
+  background-color: #000;
+  opacity: 0.5;
+}
+
+.parent a:hover{
+  background-color: #fff;
+  opacity: 0.5;
+}
+
+.side_menu{
+  width: 25%;
+  margin-bottom: 74px;
+  padding: 20px 20px 20px 35px;
+}
+
+.side_menu li{
+  background-color: #08298A;
+  height: 6rem;
+  margin-bottom: 10px;
+}
+
+.side_menu li a{
+  margin-bottom: 74px;
+  padding: 20px 20px 20px 35px;
+
+  font-size:2rem;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 2rem;
+}
+
+.side_menu .point{
+  background-color: #03A9F4;
+}
+
+.side_menu .point a{
+  color: #4D4D4D;
+}
+
+#footer {
   width: 100%;
   background-color: #08298A;
   padding: 20px 0 10px 0;
   color: white;
-  margin: auto;
   font-size: 12px;
   position: absolute;
   bottom: 0;

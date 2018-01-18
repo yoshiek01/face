@@ -1,21 +1,5 @@
-  <div class="container">
+<div class="container">
     
- <!-- <div class="wrapper clearfix">で<aside class="side_menu">を囲むことで、side_menuの分、footerを下にずらします。 -->
-    <div class="wrapper clearfix">
-
-       <aside class="side_menu">
-        <div class = "parent">
-        <nav>
-         <ul>
-          <li><%=link_to "タイムライン", blogs_path %></li>
-          <li><%=link_to "お問い合わせ", new_contact_path %></li>
-          <li><%=link_to "友達一覧", users_path if user_signed_in? %></li>
-          <li><%= link_to "メッセージ", conversations_path %></li>
-         </ul>
-       </nav>
-      </div>
- 
-     </aside>
   <article class="content">
   
    <div class="tweet">
@@ -46,3 +30,4 @@
 
   </article>
  </div>
+</div>
